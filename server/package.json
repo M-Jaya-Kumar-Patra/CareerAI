@@ -24,6 +24,7 @@
     "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0",
     "pdf-parse": "^1.1.1",
+    "pingnest": "^1.0.0",
     "twilio": "^5.3.6",
     "zod": "^3.24.1"
   }

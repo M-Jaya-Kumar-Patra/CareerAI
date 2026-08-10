@@ -14,6 +14,8 @@ import { memoryRouter } from './routes/memory.routes.js';
 import { interviewRouter } from './routes/interview.routes.js';
 import { avatarRouter } from './routes/avatar.routes.js';
 import { analyticsRouter } from './routes/analytics.routes.js';
+import pingNest from "pingnest";
+
 
 export const app = express();
 app.use(helmet());
@@ -23,6 +25,13 @@ app.use(cookieParser());
 app.use(session({ secret: env.SESSION_SECRET, resave: false, saveUninitialized: false, cookie: { httpOnly: true, secure: env.NODE_ENV === 'production', sameSite: 'lax', maxAge: 10 * 60 * 1000 } }));
 configurePassport();
 app.use(passport.initialize());
+
+app.use(
+  pingNest({
+    apiKey: env.PINGNEST_API_KEY,
+    service: env.PINGNEST_SERVICE,
+  })
+);
 
 app.get('/api/health', (_req, res) => {
   res.json({ success: true, data: { service: 'careerai-api', status: 'ok' } });
