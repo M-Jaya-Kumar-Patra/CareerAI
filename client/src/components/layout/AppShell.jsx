@@ -31,7 +31,13 @@ export function AppShell() {
           <button className="icon-btn mobile-menu" aria-label="Open navigation" onClick={() => setOpen(true)}><Menu size={20} /></button>
           <div className="topbar-spacer" />
           <button className="icon-btn" aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}</button>
-          <div className="user-chip"><div className="avatar">{user?.name?.slice(0, 2).toUpperCase() || 'U'}</div><span>{user?.name || user?.email || 'Account'}</span><button className="icon-btn logout-btn" aria-label="Log out" onClick={async () => { await logout(); navigate('/login'); }}><LogOut size={16} /></button></div>
+          <div className="user-chip">
+            <button type="button" className="user-chip-trigger" aria-label="Open settings" onClick={() => navigate('/settings')}>
+              <div className="avatar">{user?.name?.slice(0, 2).toUpperCase() || 'U'}</div>
+              <span>{user?.name || user?.email || 'Account'}</span>
+            </button>
+            <button className="icon-btn logout-btn" aria-label="Log out" onClick={async () => { await logout(); navigate('/login'); }}><LogOut size={16} /></button>
+          </div>
         </header>
         <main className="page-content"><Outlet /></main>
       </div>

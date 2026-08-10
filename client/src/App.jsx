@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppShell } from './components/layout/AppShell.jsx';
 import { DashboardPage } from './pages/DashboardPage.jsx';
-import { PlaceholderPage } from './pages/PlaceholderPage.jsx';
 import { LoginPage } from './pages/LoginPage.jsx';
 import { ProtectedRoute } from './routes/ProtectedRoute.jsx';
 import { OnboardingPage } from './pages/OnboardingPage.jsx';
@@ -11,6 +10,7 @@ import { CoachPage } from './pages/CoachPage.jsx';
 import { MemoryPage } from './pages/MemoryPage.jsx';
 import { InterviewsPage } from './pages/InterviewsPage.jsx';
 import { ProgressPage } from './pages/ProgressPage.jsx';
+import { SettingsPage } from './pages/SettingsPage.jsx';
 
 export default function App() {
   return (
@@ -27,7 +27,7 @@ export default function App() {
           <Route path="/jobs" element={<JobsPage />} />
           <Route path="/interviews" element={<InterviewsPage />} />
           <Route path="/progress" element={<ProgressPage />} />
-          <Route path="/settings" element={<PlaceholderPage title="Settings" description="Profile, preferences, privacy, and memory controls will live here." />} />
+          <Route path="/settings" element={<SettingsPage />} />
         </Route>
       </Route>
     </Routes>

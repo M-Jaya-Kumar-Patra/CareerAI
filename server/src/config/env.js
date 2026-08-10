@@ -32,6 +32,8 @@ const schema = z.object({
   CLOUDINARY_RESUME_FOLDER: z.string().default('careerai/resumes'),
   AVATAR_PROVIDER: z.enum(['local', 'livekit', 'heygen', 'tavus']).default('local'),
   AVATAR_API_KEY: z.string().optional(),
+  RESEND_API_KEY: z.string().optional(),
+  RESEND_FROM_EMAIL: z.string().optional(),
 });
 
 export const env = schema.parse(process.env);

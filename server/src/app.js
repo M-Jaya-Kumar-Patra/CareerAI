@@ -26,7 +26,7 @@ app.use(passport.initialize());
 
 app.get('/api/health', (_req, res) => {
   res.json({ success: true, data: { service: 'careerai-api', status: 'ok' } });
-});
+}); 
 app.use('/api/auth', authRouter);
 app.use('/api/resumes', resumeRouter);
 app.use('/api/jobs', jobRouter);
