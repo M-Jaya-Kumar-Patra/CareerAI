@@ -12,14 +12,14 @@ Summary
 Table of contents
 - Project overview
 - What's in this repo
-- Tech stack (actual)
-- How to run (exact commands)
-- Environment variables (from .env.example)
-- Server routes (what's implemented)
-- Data model (models present)
-- AI & RAG behavior (what code does)
+- Tech stack
+- How to run
+- Environment variables
+- Server routes
+- Data model
+- AI & RAG behavior
 - Security note about .env.example
-- Next actions (optional)
+- Next actions 
 
 ---
 
@@ -134,11 +134,3 @@ AI & RAG behavior (exact implementation details)
 Security note (important)
 
 The repository's `.env.example` currently contains non-empty values for some keys. If those are valid credentials (for GitHub, Cloudinary, etc.), they have been exposed and should be rotated immediately. Never keep real credentials in a committed `.env.example` file. Replace them with placeholders and document how to provision real secrets securely.
-
-Next actionable options I can do for you (pick any):
-1. Replace the repository README.md with a cleaned and accurate README (overwrite existing README)
-2. Redact or replace sensitive-looking values from `.env.example` and create a safe `.env.example` with placeholders
-3. Add a minimal docker-compose.yml for local dev (MongoDB + server + client) to make onboarding easier
-4. Generate API docs (OpenAPI) skeleton from routes (I can infer payloads from route handlers where implemented)
-
-Which option would you like me to take next?
